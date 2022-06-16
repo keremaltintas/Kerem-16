@@ -1,0 +1,64 @@
+﻿@model Ornek1._1.Models.CustomerItem
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-2">Otoparka Hoşgeldiniz</h1>
+    <p><h1 class="display-5">Lütfen Bilgileri Girin</h1></p>
+    <form asp-action="Index" asp-controller="Home" method="post">
+
+    
+    <div>
+            <label asp-for="Customer.CustomerName">Adınız:</label>
+            <input asp-for="Customer.CustomerName">
+        </div>
+        <p>
+        <div>
+            <label asp-for="Customer.CustomerSurname">Soyadınız:</label>
+            <input asp-for="Customer.CustomerSurname">
+        </div>
+        </p>
+        <p>
+        <div>
+            <label asp-for="Customer.CustomerID">Kimlik Bilgileriniz:</label>
+            <input asp-for="Customer.CustomerID">
+        </div>
+        </p>
+        <p>
+        <div>
+            <label asp-for="Customer.CustomerCarLisencePlate">Araç Plakanız:</label>
+            <input asp-for="Customer.CustomerCarLisencePlate">
+        </div>
+        </p>
+         <p>
+        <div>
+            <label>Ödeme Yönteminiz</label>
+            <select asp-for="Customer.PaymentMethod">
+                <option value="">Lütfen Bir Seçim Yapınız!</option>
+                <option value="Nakit">Nakit</option>
+                <option value="Kart">Kart</option>
+            </select>
+        </div>
+        </p>
+        <button type="submit">Bilgileri Kaydet</button>
+        </form>
+</div>
+
+<h2>
+    <p> Adınız: @Model.Customer?.CustomerName</p>
+    <p> Soyadınız: @Model.Customer?.CustomerSurname</p>
+    <p> Kimlik Bilgileriniz: @Model.Customer?.CustomerID</p>
+    <p> Araç Plakanız: @Model.Customer?.CustomerCarLisencePlate</p>
+    <p> Ödeme Yönteminiz: @Model.Customer?.PaymentMethod</p>
+
+</h2>
+
+<h3>
+    @Model.CarPark?.CarParkName
+    @Model.CarPark?.CarParkID
+    @Model.CarPark?.CarparkAdress
+    @Model.CarPark?.CarParkCapacity
+    @Model.CarPark?.CarParkFloor
+
+</h3>
